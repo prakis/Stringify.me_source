@@ -25,7 +25,6 @@ class HomePage extends React.Component {
       fetch('/homepage.html')
         .then(r => r.text())
         .then(homepagehtml => {
-          console.log(homepagehtml);
           me.setState({
             homePageHTML: homepagehtml
           });
