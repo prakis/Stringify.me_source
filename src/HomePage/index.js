@@ -1,5 +1,15 @@
 import React from 'react';
 import Parser from 'html-react-parser';
+import GitHubForkRibbon from 'react-github-fork-ribbon'; 
+
+function ForkRibbon() { 
+      return ( <GitHubForkRibbon position="right" 
+                          color="green"
+                          href="https://github.com/prakis/stringify.me" 
+                          target="_blank" > 
+                  Fork me on GitHub 
+              </GitHubForkRibbon> ); 
+}
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -23,7 +33,10 @@ class HomePage extends React.Component {
   }
   render() {
     const __html = (this.state.homePageHTML) ? Parser(this.state.homePageHTML) : null;
-    return (<div className="landing-page">{ __html }</div>);
+    return (<>
+        <ForkRibbon />    
+        <div className="landing-page">{ __html }</div>
+    </>);
   }
 }
 
