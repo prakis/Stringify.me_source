@@ -95,7 +95,7 @@ class UserPage extends React.Component {
         var __html = null;
         if(this.state.themeTemplate){
             const renderedTemplate = Mustache.render(this.state.themeTemplate, this.state.profileJson);
-            __html = (this.state.themeTemplate) ? <div> {Parser(renderedTemplate)} </div> : null;
+            __html = (this.state.themeTemplate) ? Parser(renderedTemplate) : null;
         }
         let divref = <>
             {__html}
