@@ -2,7 +2,6 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Mustache from 'mustache';
 import Parser from 'html-react-parser';
-//import DOMPurify from 'dompurify';
 
 const GUC = "githubusercontent.com";
 const GITHACK = "githack.com";
@@ -67,18 +66,9 @@ class UserPage extends React.Component {
                 console.log("GitHub User profile error", error);
             });
     }
-    /*appendTemplateCSSPath(template) {
-        const cdnpath = this.state.themeUrlRoot;
-        const templatecss = "template.css";
-        console.log(cdnpath + templatecss);
-        return template.replace(templatecss, cdnpath + templatecss);
-    }*/
+
     getTemplate(theme) {
-        // https://github.com/prakis/stringify.me-theme
-        // https://raw.githubusercontent.com/prakis/stringify.me-theme/master/theme.template
-        //let themeUrlBase = theme.url.replace("//github.com/", "//raw.githubusercontent.com/");
         let themeUrlBase = theme.url.replace("//github.com/", "//raw.githack.com/");
-        //let themeUrlBase = theme.url.replace("//github.com/", "//raw.githack.com/");
         const themeUrlRoot = themeUrlBase + "/master/";
         this.setState({
             themeUrlRoot: themeUrlRoot
@@ -102,14 +92,11 @@ class UserPage extends React.Component {
             });
     }
     render() {
-        //let template = JSON.stringify(this.state.themeTemplate);
-        //const stylelink = this.state.themeUrlRoot ? <link rel="stylesheet" type="text/css" href={this.state.themeUrlRoot + "template.css"} /> : null;
         var __html = null;
         if(this.state.themeTemplate){
             const renderedTemplate = Mustache.render(this.state.themeTemplate, this.state.profileJson);
             __html = (this.state.themeTemplate) ? <div> {Parser(renderedTemplate)} </div> : null;
         }
-        //console.log(">", __html, "<");
         let divref = <>
             {__html}
         </>;
