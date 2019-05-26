@@ -73,7 +73,7 @@ class UserPage extends React.Component {
         this.setState({
             themeUrlRoot: themeUrlRoot
         });
-        themeUrlRoot = "https://raw.githack.com/prakis/stringify.me-theme-card1/master/";
+        //themeUrlRoot = "https://raw.githack.com/prakis/stringify.me-theme-card1/master/";
         var fullTemplatePath = themeUrlRoot + "template.html";
         console.log(fullTemplatePath);
 
