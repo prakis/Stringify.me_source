@@ -69,11 +69,11 @@ class UserPage extends React.Component {
 
     getTemplate(theme) {
         let themeUrlBase = theme.url.replace("//github.com/", "//raw.githack.com/");
-        const themeUrlRoot = themeUrlBase + "/master/";
+        var themeUrlRoot = themeUrlBase + "/master/";
         this.setState({
             themeUrlRoot: themeUrlRoot
         });
-        //let themeUrlRoot = "https://raw.githack.com/prakis/stringify.me-theme-card2/master/";
+        themeUrlRoot = "https://raw.githack.com/prakis/stringify.me-theme-card1/master/";
         var fullTemplatePath = themeUrlRoot + "template.html";
         console.log(fullTemplatePath);
 

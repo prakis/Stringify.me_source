@@ -1,9 +1,9 @@
 .app {
   margin: 0px;
   height: 100%;
-  display: flex;
+  /*display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
+  justify-content: center;*/
 }
 .landing-page {
   flex: 1 1 auto;
