@@ -9,10 +9,10 @@
 		"twitter": "https://twitter.com/prakis",
 		"facebook": "https://www.facebook.com/Stringify.me",
 		"github": "http://github.com/prakis",
-		"summary": "I <b>play</b> different roles as <i>System</i> Architect, Designer, <p style='color:red;'>Developer</p>, IndieHacker & Batman!I play different roles as System Architect, Designer, Developer, IndieHacker & BatmanI play different roles as System Architect, Designer, Developer, IndieHacker & Batman"
+		"summary": "I work as consultant with expertise in web (<b>ReactJS</b>, <b>NodeJS</b>), desktop (<b>C#</b>, <b>JavaFX</b>) apps. I have over 14 years experience in software development and 2 years in Nanotechnology."
 	},
 	"theme": {
 		"url": "https://github.com/prakis/stringify.me-theme",
-		"background" :"grey"
+		"background" :"#f98008"
 	}
 }

@@ -6,7 +6,7 @@ import Parser from 'html-react-parser';
 /**
  * testProfileJson and testTemplate are only for local testing purposes
  */
-import testProfileJson from './profile.json';
+import testProfileJson from './testprofile.json';
 import testTemplate from './template.txt';
 
 const GUC = "githubusercontent.com";
