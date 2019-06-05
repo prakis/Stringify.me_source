@@ -3,6 +3,12 @@ import { withRouter } from 'react-router-dom';
 import Mustache from 'mustache';
 import Parser from 'html-react-parser';
 
+/**
+ * testProfileJson and testTemplate are only for local testing purposes
+ */
+import testProfileJson from './profile.json';
+import testTemplate from './template.txt';
+
 const GUC = "githubusercontent.com";
 const GITHACK = "githack.com";
 const GITCDN_LINK = "gitcdn.link";
@@ -20,8 +26,28 @@ class UserPage extends React.Component {
             themeTemplate: '',
             themeUrlRoot: ''
         };
-        this.getProfileJson();
     }
+    componentDidMount(){
+        this.getProfileJson();
+        //this._getLocalProfileJsonForTesting();
+    }
+    _getLocalProfileJsonForTesting(){
+        
+        this.addOtherJsonValues(testProfileJson);
+        //this.getTemplate(testProfileJson.theme);
+        testProfileJson.basics['picture_fullpath'] = 'test-profile-200x200.jpg';
+
+        fetch(testTemplate)
+            .then(response => response.text())
+            .then(templateData => {
+
+                this.setState({
+                    themeTemplate: templateData
+                });
+            }).catch(error => {
+                console.log("GitHub Test Theme error", error);
+            });        
+    }    
     addOtherJsonValues(json) {
         json.basics['github'] = "https://github.com/" + this.state.gitHubUserName;
         let picName = json.basics['picture'];
@@ -63,7 +89,7 @@ class UserPage extends React.Component {
                 this.setState({
                     isValidGitHubUserName: false
                 })
-                console.log("GitHub User profile error", error);
+                console.log("GitHub User profile error--", error);
             });
     }
 
