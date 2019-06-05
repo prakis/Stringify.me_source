@@ -6,12 +6,14 @@
 	
 	<style>
 	body {
-	{{#theme.background}}
-		background: {{theme.background}};
-	{{/theme.background}}
-	{{^theme.background}}
-		background: {{theme.background}} #e2e1e0; /*#f98008*/ 
-	{{/theme.background}}
+        
+	{{#theme.background-color}}
+		background-color: {{theme.background-color}};
+	{{/theme.background-color}}
+	{{^theme.background-color}}
+		background-color: #e2e1e0; /*#f98008*/ 
+	{{/theme.background-color}}	
+
 	
 		height: 100%;
 		font-family: "Roboto", Helvetica, Arial, sans-serif;

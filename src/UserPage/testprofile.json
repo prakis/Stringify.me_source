@@ -13,6 +13,6 @@
 	},
 	"theme": {
 		"url": "https://github.com/prakis/stringify.me-theme",
-		"background" :"#f98008"
+		"background-color" :"#f98008"
 	}
 }

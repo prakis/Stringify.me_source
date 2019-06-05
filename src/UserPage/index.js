@@ -15,6 +15,7 @@ const GITCDN_LINK = "gitcdn.link";
 class UserPage extends React.Component {
     constructor(props) {
         super(props);
+        this.testMode = false;
 
         var fullPath = this.props.location.pathname;
         var username = fullPath.split('/')[1];
@@ -28,8 +29,12 @@ class UserPage extends React.Component {
         };
     }
     componentDidMount(){
-        this.getProfileJson();
-        //this._getLocalProfileJsonForTesting();
+        if(this.testMode){
+            this._getLocalProfileJsonForTesting();
+        } else {
+            this.getProfileJson();
+        }
+        
     }
     _getLocalProfileJsonForTesting(){
         
@@ -99,7 +104,10 @@ class UserPage extends React.Component {
         this.setState({
             themeUrlRoot: themeUrlRoot
         });
-        //themeUrlRoot = "https://raw.githack.com/prakis/stringify.me-theme-card1/master/";
+        
+        // for local testing
+        //themeUrlRoot = "https://raw.githack.com/prakis/stringify.me-theme-card2/master/";
+        
         var fullTemplatePath = themeUrlRoot + "template.html";
         console.log(fullTemplatePath);
 
