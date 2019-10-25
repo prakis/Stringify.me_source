@@ -78,7 +78,7 @@ class UserPage extends React.Component {
     }
     getProfileJson() {
         const profileJsonURL = this.getGitCachePath(GITHACK) + 'profile.json';
-        console.log(profileJsonURL);
+        console.log(profileJsonURL, "<---1");
         var me = this;
         fetch(profileJsonURL)
             .then(response => response.json())
@@ -109,15 +109,17 @@ class UserPage extends React.Component {
         //themeUrlRoot = "https://raw.githack.com/prakis/stringify.me-theme-card2/master/";
         
         var fullTemplatePath = themeUrlRoot + "template.html";
-        console.log(fullTemplatePath);
+        console.log("-------------->", fullTemplatePath);
 
         fetch(fullTemplatePath)
             .then(response => response.text())
             .then(templateData => {
                 //let withCSSPath = this.appendTemplateCSSPath(data);
 
+                let templateStyle = "<link rel='stylesheet' href='"+ themeUrlRoot + "theme-style.css' type='text/css'>  ";
+
                 this.setState({
-                    themeTemplate: templateData
+                    themeTemplate: templateStyle + templateData
                 });
 
             }).catch(error => {
