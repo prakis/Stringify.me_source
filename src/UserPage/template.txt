@@ -44,7 +44,6 @@
           
           <div class="avatar">
             <img class="avatarMask" src="{{basics.picture_fullpath}}" alt="avatar">
-            <img src="https://themes.gohugo.io//theme/pulp/img/avatar-border.svg" alt="avatar-border">
           </div>
           
           <h1 class="author">{{basics.name}}</h1>
